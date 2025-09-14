@@ -1,14 +1,17 @@
 from fastapi import FastAPI
 
 from app.api import api_router
+from app.core.config import get_settings
 from app.db.session import init_db
 
 from contextlib import asynccontextmanager
 
+
 @asynccontextmanager
-async def lifespan(app: FastAPI):
-    await init_db(app, settings=get_settings())
+async def lifespan(_: FastAPI):
+    await init_db(settings=get_settings())
     yield
+
 
 app = FastAPI(lifespan=lifespan)
 

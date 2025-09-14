@@ -12,8 +12,6 @@ class TestSettings(Settings):
 
 test_settings = TestSettings()
 
-
-
 def create_test_app():
     app = FastAPI()
     app.include_router(api_router)

@@ -14,4 +14,5 @@ class Settings(BaseSettings):
 settings = Settings()
 
 def get_settings():
+    print(settings)
     return settings

@@ -1,5 +1,5 @@
-
 from tortoise import fields, models
+
 
 class Todo(models.Model):
     id = fields.IntField(primary_key=True)
